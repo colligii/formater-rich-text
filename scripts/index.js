@@ -1,3 +1,4 @@
+let commands = false;
 (() => {
     const textRichCamp = document.querySelector('#formatter-textarea');
 
@@ -43,7 +44,7 @@
     });
 
     document.addEventListener('keypress', (target) => {
-        if(target.shiftKey && target.ctrlKey) {
+        if(target.shiftKey && target.ctrlKey && commands) {
             const { key } = target;
             if(key === "F") return formatRichText('title-button', new String(window.getSelection()))
             if(key === "Q") return formatRichText('bold-button', new String(window.getSelection()))
